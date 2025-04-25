@@ -3,3 +3,10 @@
     width: 50px;
     height: auto; 
 }
+
+/* Redimensionner la vidéo */
+.video-player {
+    width: 45vh;
+    height: auto;
+    margin: 20px auto;
+}

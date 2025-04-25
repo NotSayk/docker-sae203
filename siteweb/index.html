@@ -11,27 +11,44 @@
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.png" alt="Logo de TonTube" id ="logo">
+            <img src="images/logo.png" alt="Logo de TonTube" id="logo">
         </div>
         <h1>TonTube</h1>
         <p>Un site de VOD gratuit</p>
-    <section id="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.html"> <i class="fas fa-home"></i>Accueil</a></li>
-                <li><a href="about.html"> <i class="fas fa-download"></i> Télécharger</a></li>
-            </ul>
-        </nav>
-        <div class="compte">
-            <a href="login.html"><i class="fas fa-user"></i>Compte</a>
-        </div>
-            
-    </section>
-
+        <section id="navbar">
+            <nav>
+                <ul>
+                    <li><a href="index.html"> <i class="fas fa-home"></i>Accueil</a></li>
+                    <li><a href="about.html"> <i class="fas fa-download"></i> Télécharger</a></li>
+                </ul>
+            </nav>
+            <div class="compte">
+                <a href="login.html"><i class="fas fa-user"></i>Compte</a>
+            </div>
+        </section>
     </header>
+
+    <section id="video-section">
+        <h2>Découvrez notre vidéo</h2>
+            <video id="video-player" class="video-player" controls>
+                <source src="videos/video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
+    </section>
 
     <footer>
         <p>&copy; 2025 TonTube. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        const videoThumbnail = document.getElementById('video-thumbnail');
+        const videoPlayer = document.getElementById('video-player');
+
+        videoThumbnail.addEventListener('click', function() {
+            videoThumbnail.style.display = 'none';
+            videoPlayer.style.display = 'block';
+            videoPlayer.play();
+        });
+    </script>
 </body>
 </html>
