@@ -8,13 +8,7 @@ RUN apt-get update && \
 # Configuration du serveur Apache
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Copier le fichier .htaccess pour gérer l'erreur 404
-COPY siteweb/.htaccess /var/www/html/.htaccess
-
-# Copier la page 404 personnalisée 
-COPY siteweb/error404.html /var/www/html/error404.html
-
-# Copier les fichiers du site web dans le dossier de base Apache
+# Copie des fichiers du site web dans le dossier de base Apache
 COPY siteweb/ /var/www/html/
 
 # Copie du script de démarrage
