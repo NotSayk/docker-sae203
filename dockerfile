@@ -1,22 +1,19 @@
 FROM debian:latest
 
-# Mise à jour de la liste des paquets et installation d'Apache
-RUN apt-get update && \
-    apt-get install -y apache2 && \
-    apt-get clean
+# Installer Apache
+RUN apt-get update && apt-get install -y apache2 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Configuration du serveur Apache
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Copie des fichiers du site web dans le dossier de base Apache
+# Copier les fichiers du site dans le dossier web par défaut d'Apache
 COPY siteweb/ /var/www/html/
 
-# Copie du script de démarrage
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# Donner les bons droits (optionnel mais conseillé)
+RUN chown -R www-data:www-data /var/www/html
 
-# Exposition du port HTTP
+# Exposer le port 80
 EXPOSE 80
 
-# Démarrage du service Apache
-CMD ["/start.sh"]
+# Lancer Apache au démarrage
+CMD ["apachectl", "-D", "FOREGROUND"]

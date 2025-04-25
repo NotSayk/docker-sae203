@@ -4,9 +4,110 @@
     height: auto; 
 }
 
-/* Redimensionner la vidéo */
 .video-player {
     width: 45vh;
     height: auto;
     margin: 20px auto;
+    border-radius: 10px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header 
+{
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+
+.titre
+{
+    margin-left: 20px;
+    font-size: 1.5em;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.titre h1, .titre p 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.titre p 
+{
+    font-size: 0.7em;
+    color: #666;
+}
+#navbar 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list 
+{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    gap: 60px;
+}
+
+.nav-list li 
+{
+    margin: 0;
+    padding: 0;
+}
+
+#compte
+{
+    margin-left: 65vh;
+}
+
+.nav-list a 
+{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-list a:hover 
+{
+    color: #0066cc;
+    background-color: rgba(0, 102, 204, 0.1);
+    border-radius: 4px;
+}
+
+.nav-list i 
+{
+    margin-right: 8px;
+}
+
+footer
+{
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

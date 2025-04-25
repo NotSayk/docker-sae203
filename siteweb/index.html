@@ -7,24 +7,30 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="js/auth.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo de TonTube" id="logo">
-        </div>
-        <h1>TonTube</h1>
-        <p>Un site de VOD gratuit</p>
+        
+        <section class="header">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo de TonTube" id="logo">
+            </div>
+            <div class="titre">
+                <h1>TonTube</h1>
+                <p>Un site de VOD gratuit</p>
+            </div>
+        </section>
+
         <section id="navbar">
             <nav>
-                <ul>
-                    <li><a href="index.html"> <i class="fas fa-home"></i>Accueil</a></li>
-                    <li><a href="about.html"> <i class="fas fa-download"></i> Télécharger</a></li>
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="upload.html"><i class="fas fa-download"></i> Télécharger</a></li>
+                    <li><a href="login.html" id="compte-link"><i class="fas fa-user"></i> Se connecter</a></li>
                 </ul>
+
             </nav>
-            <div class="compte">
-                <a href="login.html"><i class="fas fa-user"></i>Compte</a>
-            </div>
         </section>
     </header>
 
@@ -34,21 +40,19 @@
                 <source src="videos/video1.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la balise vidéo.
             </video>
+            <video id="video-player" class="video-player" controls>
+                <source src="videos/video2.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
+            <video id="video-player" class="video-player" controls>
+                <source src="videos/video3.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
     </section>
 
     <footer>
         <p>&copy; 2025 TonTube. Tous droits réservés.</p>
     </footer>
 
-    <script>
-        const videoThumbnail = document.getElementById('video-thumbnail');
-        const videoPlayer = document.getElementById('video-player');
-
-        videoThumbnail.addEventListener('click', function() {
-            videoThumbnail.style.display = 'none';
-            videoPlayer.style.display = 'block';
-            videoPlayer.play();
-        });
-    </script>
 </body>
 </html>
