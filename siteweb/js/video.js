@@ -1,7 +1,7 @@
 const PARAMETRES = new URLSearchParams(window.location.search);
 const DIV1 = document.getElementById("VideoDiv");
 const VIDEO_URL = PARAMETRES.get("video");
-const VIDEO_FOLDER = "videos/"; // Dossier des videos
+const VIDEO_FOLDER = "videos/"; 
 
 let lstVideo = [];
 
@@ -15,20 +15,18 @@ function ajouterBarInfo()
 {
     const DIV2 = document.createElement("div");
     let titre = document.createElement("h2");
+    let vuesInfo = document.createElement("p");
+
+    const views = localStorage.getItem(`views_${VIDEO_URL}`) || 0;
 
     DIV2.id = "DescriptionDiv";
     titre.textContent = VIDEO_URL.substring(0, VIDEO_URL.length - 4).replaceAll('_', ' ');
-
+    vuesInfo.innerHTML = `<i class="fas fa-eye"></i> ${views} vues`;
+    vuesInfo.id = "vuesCount";
     
-
     DIV1.append(DIV2);
     DIV2.append(titre);
-}
-
-
-function createButton(icon, text)
-{
-    let bouton = document.createElement("button");
+    DIV2.append(vuesInfo);
 }
 
 function ajouterVideo()
@@ -45,6 +43,7 @@ function ajouterVideo()
 
         DIV1.append(video);
         video.append(source);
+    
     }
     else
     {
