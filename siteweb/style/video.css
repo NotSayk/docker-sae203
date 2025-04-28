@@ -1,5 +1,3 @@
-
-
 #PrimaryDiv
 {
     display: flex;
@@ -14,4 +12,8 @@
     height: 75vh;
     margin: 2vh;
     border-radius: 10px;
+}
+
+#MESSAGE-ERROR {
+    font-size: 1000%;
 }
