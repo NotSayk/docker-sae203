@@ -1,4 +1,4 @@
-#PrimaryDiv
+#VideoDiv
 {
     display: flex;
     justify-content: center;
@@ -6,12 +6,16 @@
     
 }
 
-#PrimaryDiv video
+#VideoDiv video
 {
     width: auto;
     height: 75vh;
     margin: 2vh;
     border-radius: 10px;
+}
+
+#DescriptionDiv {
+    background-color: blue;
 }
 
 #MESSAGE-ERROR {
