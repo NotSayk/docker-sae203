@@ -58,14 +58,29 @@ function displayVideos(videos)
         likeVideo.innerHTML = `Likes: ${likes} <i class="fas fa-thumbs-up"></i>`;
         likeVideo.className = 'like-video';
 
+        // Créer un élément pour la durée
+        const durationElement = document.createElement('p');
+        durationElement.className = 'duree-video';
+        durationElement.innerHTML = `Durée: <i class="fas fa-clock"></i> ...`;
+
         // Ajouter les statistiques au conteneur
         statsContainer.appendChild(vueVideo);
         statsContainer.appendChild(likeVideo);
+        statsContainer.appendChild(durationElement);
 
         button.appendChild(videoElement);
         button.appendChild(videoTitle);
         button.appendChild(statsContainer);
         videoSection.appendChild(button);
+
+        videoElement.addEventListener('loadedmetadata', () => {
+            // Formater la durée en minutes:secondes
+            const minutes = Math.floor(videoElement.duration / 60);
+            const seconds = Math.floor(videoElement.duration % 60);
+            const formattedDuration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            durationElement.innerHTML = `${formattedDuration}`;
+        });
     });
 }
 

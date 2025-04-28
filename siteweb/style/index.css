@@ -9,6 +9,8 @@
     justify-content: center;
 }
 
+
+
 #video-section button 
 {
     background : none;
@@ -46,6 +48,11 @@
     width: 45vh;
     height: 25vh;
     border-radius: 10px;
+}
+#video-section button:hover .video-player 
+{
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
 }
 
 .titre-video 
@@ -92,4 +99,11 @@
     display: flex;
     align-items: center;
     margin-left: 5px;
+}
+
+.duree-video 
+{
+    margin-left: auto;
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
 }
