@@ -5,14 +5,21 @@ const VIDEO_URL = PARAMETRES.get("video");
 // Dossier
 const VIDEO_FOLDER = "videos/"
 
-if (VIDEO_URL)
+function main()
 {
-    let video = document.createElement("video");
-    let source = document.createElement("source");
+    console.log(isVideoInFolder("heres_a_10_seconde_joke.mp4"));
+    if (isVideoInFolder(VIDEO_URL))
+        {
+            let video = document.createElement("video");
+            let source = document.createElement("source");
+        
+            source.setAttribute("src", VIDEO_FOLDER + VIDEO_URL);
+            video.setAttribute("controls", true);
+        
+            DIV.append(video);
+            video.append(source);
+        }
 
-    source.setAttribute("src", VIDEO_FOLDER + VIDEO_URL);
-    video.setAttribute("controls", true);
-
-    DIV.append(video);
-    video.append(source);
 }
+
+main();
