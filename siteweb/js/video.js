@@ -15,13 +15,16 @@ function ajouterBarInfo()
 {
     const DIV2 = document.createElement("div");
     let titre = document.createElement("h2");
-    
+
     DIV2.id = "DescriptionDiv";
-    titre.textContent = VIDEO_URL.substring(0, VIDEO_URL.length - 4).replace(/ /g, "_");
+    titre.textContent = VIDEO_URL.substring(0, VIDEO_URL.length - 4).replaceAll('_', ' ');
+
+    
 
     DIV1.append(DIV2);
     DIV2.append(titre);
 }
+
 
 function createButton(icon, text)
 {
