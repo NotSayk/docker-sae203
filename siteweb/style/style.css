@@ -86,6 +86,60 @@ header
     text-decoration: none;
 }
 
+#searchbar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+input[type="text"] 
+{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+
+#barreRecherche 
+{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-form 
+{
+    display: flex;
+    align-items: center;
+}
+
+#search-input 
+{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 250px;
+    outline: none;
+}
+
+#search-button 
+{
+    padding: 8px 12px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover 
+{
+    background-color: darkred;
+}
+
 footer
 {
     text-align: center;
