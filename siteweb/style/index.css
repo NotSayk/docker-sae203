@@ -35,18 +35,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
-    color: white;
+    color: rgb(225, 38, 30);
     opacity: 0.8;
     z-index: 10; 
-    pointer-events: none;
 }
-
 
 .video-player 
 {
     width: 45vh;
     height: 25.3125vh;
     border-radius: 10px;
+
+
 }
 
 
