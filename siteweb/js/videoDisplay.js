@@ -10,14 +10,15 @@ const localVideos =
 
 ]
 
-async function loadVideos() {
+async function loadVideos() 
+{
     try {
         const response = await fetch('/videos.json');
-        if (!response.ok) throw new Error('JSON not found, using local list');
+        if (!response.ok) throw new Error('Fichier json non trouvé');
         const data = await response.json();
         displayVideos(data.videos);
     } catch (error) {
-        console.log('Using local video list:', error.message);
+        console.log('utilisation de la liste locale:', error.message);
         displayVideos(localVideos);
     }
 }
@@ -34,6 +35,7 @@ function displayVideos(videos) {
         videoElement.src = videoPath;
         videoElement.className = 'video-player';
         videoElement.preload = 'metadata';
+        button.className = 'video-button';
 
         const videoTitle = document.createElement('p');
         videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
