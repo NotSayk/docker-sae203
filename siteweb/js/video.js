@@ -1,11 +1,34 @@
 const PARAMETRES = new URLSearchParams(window.location.search);
-const DIV = document.getElementById("PrimaryDiv");
+const DIV1 = document.getElementById("VideoDiv");
 const VIDEO_URL = PARAMETRES.get("video");
-const VIDEO_FOLDER = "videos/"; // Dossier
+const VIDEO_FOLDER = "videos/"; // Dossier des videos
 
 let lstVideo = [];
 
 function main()
+{
+    ajouterVideo();
+    ajouterBarInfo();
+}
+
+function ajouterBarInfo()
+{
+    const DIV2 = document.createElement("div");
+    let titre = document.createElement("h2");
+    
+    DIV2.id = "DescriptionDiv";
+    titre.textContent = VIDEO_URL.substring(0, VIDEO_URL.length - 4).replace(/ /g, "_");
+
+    DIV1.append(DIV2);
+    DIV2.append(titre);
+}
+
+function createButton(icon, text)
+{
+    let bouton = document.createElement("button");
+}
+
+function ajouterVideo()
 {
     if (lstVideo.includes(VIDEO_URL))
     {
@@ -17,7 +40,7 @@ function main()
         source.setAttribute("src", VIDEO_FOLDER + VIDEO_URL);
         video.setAttribute("controls", true);
 
-        DIV.append(video);
+        DIV1.append(video);
         video.append(source);
     }
     else
@@ -25,7 +48,7 @@ function main()
         let erreur = document.createElement("h1");
         erreur.textContent = "Error 404";
         erreur.id = "MESSAGE-ERROR";
-        DIV.append(erreur);
+        DIV1.append(erreur);
     }
 }
 

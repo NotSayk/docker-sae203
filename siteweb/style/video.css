@@ -1,17 +1,25 @@
-#PrimaryDiv
+
+
+
+#VideoDiv
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
 }
 
-#PrimaryDiv video
+#VideoDiv video
 {
     width: auto;
     height: 75vh;
     margin: 2vh;
     border-radius: 10px;
+}
+
+#DescriptionDiv {
+
 }
 
 #MESSAGE-ERROR {
