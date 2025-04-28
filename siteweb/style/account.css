@@ -1,0 +1,209 @@
+/* Variables globales */
+:root {
+    --primary-color: #065fd4;
+    --primary-hover: #0356c5;
+    --danger-color: #ff0000;
+    --danger-hover: #cc0000;
+    --background-light: #f8f8f8;
+    --text-primary: #333;
+    --text-secondary: #606060;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --border-radius-sm: 8px;
+    --border-radius-md: 18px;
+    --border-radius-lg: 20px;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-light);
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Titre */
+.titre {
+    margin-left: 20px;
+    font-size: 1.5em;
+    color: var(--text-primary);
+}
+
+.titre h1, 
+.titre p {
+    margin: 0;
+}
+
+.titre p {
+    font-size: 0.7em;
+    color: var(--text-secondary);
+}
+
+/* Section profil */
+.profile-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Photo de profil */
+.profile-picture {
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#change-photo-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#change-photo-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Informations profil */
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-info h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    color: var(--text-secondary);
+}
+
+/* Section playlists */
+.playlists-section {
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.playlists-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.playlist-card {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.playlist-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Bouton création playlist */
+.create-playlist button {
+    width: 100%;
+    height: 150px;
+    border: 2px dashed #909090;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.create-playlist button:hover {
+    background-color: #f0f0f0;
+}
+
+.plus-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.create-playlist button span {
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+/* Bouton déconnexion */
+#logout-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#logout-btn:hover {
+    background-color: var(--danger-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-light);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
