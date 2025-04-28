@@ -1,6 +1,7 @@
 /*section video*/
 
-#video-section {
+#video-section
+{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -9,7 +10,7 @@
 
 #video-section button 
 {
-    background-color: #0066cc;
+    background : none;
     border: none;
     padding: 0;
     margin: 15px;
@@ -40,11 +41,11 @@
 }
 
 
-footer
+.video-player 
 {
-    text-align: center;
-    font-size: 0.9em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    width: 45vh;
+    height: 25.3125vh;
+    border-radius: 10px;
 }
+
+

@@ -4,14 +4,6 @@
     height: auto; 
 }
 
-.video-player 
-{
-    width: 45vh;
-    height: 25.3125vh;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
 
 header 
 {
@@ -84,4 +76,13 @@ header
 .nav-list i 
 {
     margin-right: 8px;
+}
+
+footer
+{
+    text-align: center;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
