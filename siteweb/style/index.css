@@ -18,6 +18,8 @@
     cursor: pointer;
     position: relative;
     width: 45vh;
+    border-radius: 10px;
+    background-color: blue;
 }
 
 #video-section button:hover 
@@ -43,10 +45,14 @@
 .video-player 
 {
     width: 45vh;
-    height: 25.3125vh;
+    height: 25vh;
     border-radius: 10px;
-
-
 }
 
-
+.titre-video 
+{
+    display: flex;
+    font-weight: bolder;
+    margin-left: 1%;
+    margin-top: 1%;
+}

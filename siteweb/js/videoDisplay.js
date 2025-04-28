@@ -53,6 +53,7 @@ function displayVideos(videos) {
 
         const videoTitle = document.createElement('p');
         videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
+        videoTitle.className = 'titre-video';
 
         button.appendChild(videoElement);
         button.appendChild(videoTitle);
