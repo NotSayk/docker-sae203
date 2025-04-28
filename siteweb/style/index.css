@@ -18,8 +18,7 @@
     cursor: pointer;
     position: relative;
     width: 45vh;
-    border-radius: 10px;
-    background-color: blue;
+    border-radius: 4px;
 }
 
 #video-section button:hover 
@@ -52,7 +51,24 @@
 .titre-video 
 {
     display: flex;
-    font-weight: bolder;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.vue-video 
+{
+    display: flex;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 22px;
+    margin-top: 2px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 4px;
+}
+
+.vue-video i 
+{
+    margin-left: 5px;
 }

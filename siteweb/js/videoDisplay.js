@@ -54,9 +54,18 @@ function displayVideos(videos) {
         const videoTitle = document.createElement('p');
         videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
         videoTitle.className = 'titre-video';
+        
+        const vueVideo = document.createElement('p');
+        vueVideo.textContent = "Vues: " + Math.floor(Math.random() * 1000) + " ";
+        vueVideo.className = 'vue-video';
+        
+        const oielVideo = document.createElement('i');
+        oielVideo.className = 'fas fa-eye';
+        vueVideo.appendChild(oielVideo);
 
         button.appendChild(videoElement);
         button.appendChild(videoTitle);
+        button.appendChild(vueVideo);
         videoSection.appendChild(button);
     });
 }
