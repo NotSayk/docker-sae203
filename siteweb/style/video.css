@@ -1,18 +1,17 @@
 
 
-#Primary
+#PrimaryDiv
 {
-    background-color: rgb(225, 38, 30);
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
 
-#Primary video
+#PrimaryDiv video
 {
-    width: 45vh;
-    height: auto;
-    margin: 200px auto;
+    width: auto;
+    height: 75vh;
+    margin: 2vh;
     border-radius: 10px;
 }
