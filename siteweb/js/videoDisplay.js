@@ -15,7 +15,9 @@ const localVideos =
         "yoooooo.mp4",
         "low_quality_gag_nam.mp4",
         "Low_Quality_Memes.mp4",
-        "memes_discord.mp4"
+        "memes_discord.mp4",
+        "Low_quality_vids.mp4",
+        "Horizontally_spinning_man.mp4"
 ]
 
 async function loadVideos() 
