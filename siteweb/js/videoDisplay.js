@@ -6,8 +6,8 @@ const localVideos =
     "my_10_second_football_clip.mp4",
     "penguin(very_emotional).mp4",
     "เจอเรเต้นกับลิ.mp4",
-    "เพนกวินเต้นตึงๆ.mp4"
-
+    "เพนกวินเต้นตึงๆ.mp4",
+    "tralalero_tralala.mp4"
 ]
 
 async function loadVideos() 
