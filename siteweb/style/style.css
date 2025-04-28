@@ -59,11 +59,8 @@ header {
 .nav-list 
 {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
-    gap: 60px;
 }
 
 .nav-list li 
