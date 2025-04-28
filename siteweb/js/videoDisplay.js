@@ -35,7 +35,16 @@ function displayVideos(videos) {
         videoElement.src = videoPath;
         videoElement.className = 'video-player';
         videoElement.preload = 'metadata';
-        button.className = 'video-button';
+        
+        button.type = "submit";
+        button.onclick = function() 
+        {
+            let currentUrl = document.URL.replace("index.html", "video.html");
+            if (!currentUrl.includes("video.html")) {
+                currentUrl = currentUrl.replace(/\$/, '') + "/video.html";
+            }
+            window.location.href = currentUrl + "?video=" + video;
+        };
 
         const videoTitle = document.createElement('p');
         videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
