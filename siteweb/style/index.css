@@ -40,19 +40,13 @@
     z-index: 10; 
 }
 
-.video-player:hover 
-{
-    filter: blur(0px);
-}
-
 .video-player 
 {
     width: 45vh;
     height: 25.3125vh;
     border-radius: 10px;
 
-    filter: blur(1px);
-    transition: 0.4s;
+
 }
 
 
