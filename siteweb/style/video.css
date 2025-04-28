@@ -1,0 +1,20 @@
+
+* {
+    size: 100%, 100%;
+}
+
+#Primary
+{
+    background-color: rgb(225, 38, 30);
+
+    size: 1280px, 960px;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+#Primary video
+{
+    
+}
