@@ -1,19 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
+    const formulaireRecherche = document.getElementById('search-form');
+    const champRecherche = document.getElementById('search-input');
 
-    if (searchForm && searchInput) {
-        searchForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            let query = searchInput.value.trim().replace(/ /g, '_');
-
-            if (query) 
-            {
-                query += '.mp4'; 
-                window.location.href = `video.html?video=${encodeURIComponent(query)}`; 
-            }
-        });
+    async function chargerListeVideos() {
+        try {
+            const reponse = await fetch('videos.json');
+            const donnees = await reponse.json();
+            return donnees.videos || [];
+        } catch {
+            return [];
+        }
     }
-});
 
+    async function initialiserRecherche() {
+        const videos = await chargerListeVideos();
+
+        if (formulaireRecherche && champRecherche) {
+            formulaireRecherche.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const requete = champRecherche.value.toLowerCase().trim();
+                const correspondance = videos.find(video => video.toLowerCase().includes(requete));
+
+                if (correspondance) {
+                    window.location.href = `video.html?video=${encodeURIComponent(correspondance)}`;
+                } else {
+                    window.location.href = `video.html`;
+                }
+            });
+        }
+    }
+
+    initialiserRecherche();
+});

@@ -5,10 +5,12 @@
     <title>Mon compte - TonTube</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/account.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/logo.png" type="image/png">
     <script src="js/auth.js" defer></script>
-    <script src="js/account.js" defer></script>
     <script src="js/recherche.js" defer></script>
+    <script src="js/account.js" defer></script>
 </head>
 <body>
     <header>
@@ -42,54 +44,28 @@
         </section>
     </header>
 
-    <main style="text-align: left; margin-top: 50px; padding: 0 20px;">
-        <container id="container">
-            <div class="profile-section">
-                <div class="profile-header">
-                    <div class="profile-picture">
-                        <img id="profile-image" src="images/logo.png" alt="Photo de profil">
-                        <input type="file" id="profile-upload" accept="image/*" style="display: none;">
-                        <div id="photo-options" class="photo-options" style="display: none;">
-                            <button id="change-photo-btn">Changer la photo</button>
-                            <button id="delete-photo-btn">Supprimer la photo</button>
-                        </div>
-                    </div>
-                    <div class="profile-info">
-                        <h2>Chaîne de <span id="username-display"></span></h2>
-                        <div class="stats">
-                            <p><span id="subscriber-count">0</span> abonnés</p>
-                            <p><span id="video-count">0</span> vidéos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="history-section">
-                <h3>Historique</h3>
-                <div class="history-grid" id="history-container">
-                    <!-- L'historique sera ajouté dynamiquement -->
-                    <div class="empty-history">
-                        <p>Aucune vidéo dans l'historique</p>
-                    </div>
-                </div>
-            </div>
-            <div class="playlists-section">
-                <h3>Mes playlists</h3>
-                <div class="playlists-grid" id="playlists-container">
-                    <div class="playlist-card create-playlist">
-                        <button id="create-playlist-btn">
-                            <span class="plus-icon">+</span>
-                            <span>Créer une playlist</span>
-                        </button>
-                    </div>
-                    <!-- Les playlists seront ajoutées ici dynamiquement -->
-                </div>
-            </div>
-        </container>
-        <button id="logout-btn">Se déconnecter</button>
-    </main>
+    <section id="photo">
+        <img src="images/pfp-defaut.png" alt="Logo de TonTube" id="logo-compte">
+        <button id="changer">Changer photo de profil</button>
+        <h2>Bienvenue sur votre compte, </h2>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 TonTube. Tous droits réservés.</p>
-    </footer>
+    <section id="stats-perso">
+        <h2>Statistiques personnelles</h2>
+        <div class="stat">
+            <p>Vues : 0</p>
+        </div>
+        <div class="stat">
+            <p>Likes : 0</p>
+        </div>
+        <div class="stat">
+            <p>Commentaires : 0</p>
+        </div>
+    </section>
+
+    <section id="deco">
+        <button id="deco-bouton">Se déconnecter</button>
+    </section>
+
 </body>
 </html>

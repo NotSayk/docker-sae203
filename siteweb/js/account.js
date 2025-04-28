@@ -1,70 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Récupération des éléments
-    const profileImage = document.getElementById('profile-image');
-    const photoOptions = document.getElementById('photo-options');
-    const changePhotoBtn = document.getElementById('change-photo-btn');
-    const deletePhotoBtn = document.getElementById('delete-photo-btn');
-    const profileUpload = document.getElementById('profile-upload');
-    const usernameDisplay = document.getElementById('username-display');
-    const logoutBtn = document.getElementById('logout-btn');
-    
-    // Afficher le nom d'utilisateur
-    const currentUser = sessionStorage.getItem('user');
-    if (currentUser) {
-        usernameDisplay.textContent = currentUser;
-    } else {
-        window.location.href = 'login.html';
+    const boutonDeconnexion = document.getElementById('deco-bouton');
+    const boutonChangerPhoto = document.getElementById('changer');
+    const photoProfil = document.getElementById('logo-compte');
+    const utilisateurActuel = sessionStorage.getItem('user');
+    if (!utilisateurActuel) 
+    {
+        window.location.href = 'index.html'; 
+        return;
     }
-    
-    // Charger la photo de profil si elle existe
-    const savedProfileImage = localStorage.getItem(`${currentUser}_profileImage`);
-    if (savedProfileImage) {
-        profileImage.src = savedProfileImage;
+
+    const urlPhotoEnregistree = localStorage.getItem(`profilePhotoUrl_${utilisateurActuel}`);
+    if (urlPhotoEnregistree) 
+    {
+        photoProfil.src = urlPhotoEnregistree;
     }
-    
-    // Afficher/masquer les options au clic sur la photo
-    profileImage.addEventListener('click', function(e) {
-        e.stopPropagation();
-        photoOptions.style.display = photoOptions.style.display === 'none' ? 'flex' : 'none';
-    });
-    
-    // Fermer les options si on clique ailleurs
-    document.addEventListener('click', function(e) {
-        if (!photoOptions.contains(e.target) && e.target !== profileImage) {
-            photoOptions.style.display = 'none';
-        }
-    });
-    
-    // Changer la photo
-    changePhotoBtn.addEventListener('click', function() {
-        profileUpload.click();
-    });
-    
-    // Traiter le fichier sélectionné
-    profileUpload.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                profileImage.src = e.target.result;
-                // Sauvegarder l'image dans le localStorage
-                localStorage.setItem(`${currentUser}_profileImage`, e.target.result);
-            };
-            reader.readAsDataURL(file);
-        }
-        photoOptions.style.display = 'none';
-    });
-    
-    // Supprimer la photo
-    deletePhotoBtn.addEventListener('click', function() {
-        profileImage.src = 'images/logo.png';
-        localStorage.removeItem(`${currentUser}_profileImage`);
-        photoOptions.style.display = 'none';
-    });
-    
-    // Déconnexion
-    logoutBtn.addEventListener('click', function() {
+
+    boutonDeconnexion.addEventListener('click', function() 
+    {
         sessionStorage.removeItem('user');
         window.location.href = 'index.html';
+    });
+
+    boutonChangerPhoto.addEventListener('click', function() 
+    {
+        const nouvelleUrlPhoto = prompt('Entrez l\'URL de la nouvelle photo de profil :');
+        if (nouvelleUrlPhoto) {
+            photoProfil.src = nouvelleUrlPhoto;
+            localStorage.setItem(`profilePhotoUrl_${utilisateurActuel}`, nouvelleUrlPhoto);
+        }
     });
 });

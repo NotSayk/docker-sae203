@@ -51,11 +51,11 @@ function displayVideos(videos)
         statsContainer.className = 'video-stats';
 
         const vueVideo = document.createElement('p');
-        vueVideo.innerHTML = `Vues: ${views} <i class="fas fa-eye"></i>`;
+        vueVideo.innerHTML = `${views}<i class="fas fa-eye"></i>`;
         vueVideo.className = 'vue-video';
 
         const likeVideo = document.createElement('p');
-        likeVideo.innerHTML = `Likes: ${likes} <i class="fas fa-thumbs-up"></i>`;
+        likeVideo.innerHTML = `${likes}<i class="fas fa-thumbs-up"></i>`;
         likeVideo.className = 'like-video';
 
         // Créer un élément pour la durée

@@ -1,336 +1,87 @@
-/* Variables globales */
-:root {
-    --primary-color: #065fd4;
-    --primary-hover: #0356c5;
-    --danger-color: #ff0000;
-    --danger-hover: #cc0000;
-    --background-light: #f8f8f8;
-    --text-primary: #333;
-    --text-secondary: #606060;
-    --shadow: 0 2px 4px rgba(0,0,0,0.1);
-    --border-radius-sm: 8px;
-    --border-radius-md: 18px;
-    --border-radius-lg: 20px;
+#logo-compte 
+{
+width: 90px;
+height: 90px;
+border-radius: 50%;
 }
 
-/* Reset et styles de base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--background-light);
-    box-shadow: var(--shadow);
-    width: 100%;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    width: 20%;
-}
-
-#logo {
-    width: 50px;
-    height: auto;
-}
-
-/* Titre */
-.titre {
-    margin-left: 20px;
-    font-size: 1.5em;
-    color: var(--text-primary);
-}
-
-.titre h1, 
-.titre p {
-    margin: 0;
-}
-
-.titre p {
-    font-size: 0.7em;
-    color: var(--text-secondary);
-}
-
-/* Section profil */
-.profile-section {
-    max-width: 1200px;
-    margin: 0;  /* Supprimé le margin auto */
-    padding: 20px;
-}
-
-.profile-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    margin-left: 0; /* Ajouté pour forcer l'alignement à gauche */
-}
-
-.profile-picture {
-    flex-shrink: 0;
-    position: relative;
-    cursor: pointer;
-}
-
-.profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: filter 0.3s ease;
-}
-
-.profile-picture img:hover {
-    filter: brightness(0.8);
-}
-
-.photo-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow);
-    padding: 10px;
-    margin-top: 10px;
-    z-index: 100;
+#photo {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 100%;
+    align-items: center;
+    margin: 2rem 0;
 }
 
-#change-photo-btn, #delete-photo-btn {
-    padding: 8px 16px;
+#photo h2 {
+    margin-top: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+#changer {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4285f4;
+    color: white;
     border: none;
-    border-radius: var(--border-radius-md);
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s;
-    text-align: left;
+    transition: background-color 0.3s;
 }
 
-#change-photo-btn {
-    background-color: var(--primary-color);
-    color: white;
+#changer:hover {
+    background-color: #3367d6;
 }
 
-#change-photo-btn:hover {
-    background-color: var(--primary-hover);
+#stats-perso {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#delete-photo-btn {
-    background-color: var(--danger-color);
-    color: white;
+#stats-perso h2 
+{
+    color: #333;
+    border-bottom: 2px solid #4285f4;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-#delete-photo-btn:hover {
-    background-color: var(--danger-hover);
-}
-
-/* Informations profil */
-.profile-info {
-    flex-grow: 1;
-}
-
-.profile-info h2 {
-    margin-bottom: 12px;
-    font-size: 24px;
-}
-
-.stats {
-    display: flex;
-    gap: 20px;
-    color: var(--text-secondary);
-}
-
-/* Section playlists */
-.playlists-section {
-    margin: 40px auto;  /* Centre la section horizontalement */
-    padding: 20px;
-    max-width: fit-content;  /* Limite la largeur pour un meilleur rendu */
-    background-color: white;
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow);
-}
-
-.playlists-section h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;  /* Centre le titre */
-}
-
-.playlists-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-items: center;  /* Centre les éléments de la grille */
-    margin: 0 auto;  /* Centre la grille */
-}
-
-/* Ajustement de la carte de playlist */
-.playlist-card {
-    width: 200px;  /* Largeur fixe pour uniformité */
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-sm);
-    overflow: hidden;
+.stat 
+{
+    padding: 0.5rem;
+    margin: 0.1rem 0;
     transition: transform 0.2s;
 }
 
-.playlist-card:hover {
-    transform: translateY(-4px);
+.stat:hover 
+{
+    transform: translateY(-2px);
 }
 
-/* Bouton création playlist */
-.create-playlist button {
-    width: 200px;  /* Même largeur que les cartes */
-    height: 150px;
-    border: 2px dashed #909090;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.2s ease;
+
+#deco {
+    text-align: center;
+    padding: 1.5rem;
 }
 
-.create-playlist button:hover {
-    background-color: #f0f0f0;
-}
-
-.plus-icon {
-    font-size: 40px;
-    color: var(--primary-color);
-}
-
-.create-playlist button span {
-    color: var(--primary-color);
-    font-size: 16px;
-}
-
-/* Bouton déconnexion */
-#logout-btn {
-    display: block;
-    margin: 30px auto 70px auto;
-    padding: 10px 20px;
-    background-color: var(--danger-color);
+#deco-bouton {
+    padding: 0.8rem 1.5rem;
+    background-color: #db4437;
     color: white;
     border: none;
-    border-radius: var(--border-radius-lg);
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
 }
 
-#logout-btn:hover {
-    background-color: var(--danger-hover);
+#deco-bouton:hover
+{
+    background-color: #c53929;
 }
 
-/* Footer */
-footer {
-    background-color: var(--background-light);
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    color: var(--text-secondary);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Section historique */
-.history-section {
-    margin: 40px auto;
-    padding: 20px;
-    max-width:fit-content;  /* Limite la largeur pour un meilleur rendu */
-    background-color: white;
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow);
-}
-
-.history-section h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.history-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin: 0 auto;
-}
-
-/* Style pour les vidéos de l'historique */
-.history-item {
-    width: 200px;
-    height: 150px;  /* Même hauteur que les cartes playlist */
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-sm);
-    overflow: hidden;
-    transition: transform 0.2s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.history-item:hover {
-    transform: translateY(-4px);
-    background-color: #f0f0f0;
-}
-
-.history-item img {
-    width: 100%;
-    height: 112px;
-    object-fit: cover;
-}
-
-.history-item .video-info {
-    padding: 10px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.history-item .video-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-primary);
-    /* Limite le titre à 2 lignes */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.history-item .video-meta {
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: 4px;
-}
-
-.empty-history {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 40px;
-    color: var(--text-secondary);
-    font-style: italic;
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-sm);
-    width: 100%;
-}

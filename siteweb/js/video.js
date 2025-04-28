@@ -24,7 +24,7 @@ function ajouterBarInfo()
     
     const views = localStorage.getItem(`views_${VIDEO_URL}`) || 0;
     const likes = localStorage.getItem(`likes_${VIDEO_URL}`) || 0;
-    let hasLiked = currentUser ? localStorage.getItem(`${currentUser}_liked_${VIDEO_URL}`) === 'true' : false;
+    let aLike = currentUser ? localStorage.getItem(`${currentUser}_liked_${VIDEO_URL}`) === 'true' : false;
 
     DIV2.id = "DescriptionDiv";
     titre.textContent = VIDEO_URL.substring(0, VIDEO_URL.length - 4).replaceAll('_', ' ');
@@ -48,7 +48,7 @@ function ajouterBarInfo()
 
     function updateLikeButtonAppearance() {
         const icon = likeButton.querySelector('i');
-        if (hasLiked) {
+        if (aLike) {
             icon.style.color = "blue"; // Pouce bleu si liké
         } else {
             icon.style.color = ""; // Couleur de base sinon
@@ -66,16 +66,16 @@ function ajouterBarInfo()
 
         let currentLikes = parseInt(localStorage.getItem(`likes_${VIDEO_URL}`) || 0);
 
-        if (hasLiked) {
+        if (aLike) {
             currentLikes = Math.max(currentLikes - 1, 0); // éviter d'aller en négatif
             localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
             localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'false');
-            hasLiked = false;
+            aLike = false;
         } else {
             currentLikes += 1;
             localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
             localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'true');
-            hasLiked = true;
+            aLike = true;
         }
 
         // Mettre à jour l'affichage
