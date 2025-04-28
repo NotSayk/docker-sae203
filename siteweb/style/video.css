@@ -1,8 +1,12 @@
+
+
+
 #VideoDiv
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
 }
 
@@ -15,7 +19,7 @@
 }
 
 #DescriptionDiv {
-    background-color: blue;
+
 }
 
 #MESSAGE-ERROR {
