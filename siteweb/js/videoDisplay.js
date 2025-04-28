@@ -1,36 +1,49 @@
 const videoSection = document.getElementById('video-section');
-const videoFolder = 'videos/';
 
-fetch(videoFolder)
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Unable to fetch video folder');
+const localVideos = [
+    "video1.mp4",
+    "video2.mp4",
+    "video3.mp4",
+    "13156171_3840_2160_60fps.mp4",
+    "13475074_3840_2160_25fps.mp4",
+    "13476456_3840_2160_120fps.mp4",
+    "13510797_3840_2160_30fps.mp4",
+    "14722767-uhd_3840_2160_30fps.mp4",
+    "20606341-uhd_2560_1440_24fps.mp4"
+];
+
+async function loadVideos() {
+    try {
+        const response = await fetch('/videos.json');
+        if (!response.ok) throw new Error('JSON not found, using local list');
+        const data = await response.json();
+        displayVideos(data.videos);
+    } catch (error) {
+        console.log('Using local video list:', error.message);
+        displayVideos(localVideos);
     }
-    return response.text();
-})
-.then(data => {
-    const parser = new DOMParser();
-    const htmlDoc = parser.parseFromString(data, 'text/html');
-    const videoFiles = Array.from(htmlDoc.querySelectorAll('a'))
-        .map(link => link.href)
-        .filter(href => href.endsWith('.mp4'));
+}
 
-    videoFiles.forEach(video => {
+function displayVideos(videos) {
+    videos.forEach(video => {
         const button = document.createElement('button');
         const videoElement = document.createElement('video');
-        videoElement.src = video;
+        
+        const videoPath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? `videos/${video}`
+            : `/videos/${video}`;
+            
+        videoElement.src = videoPath;
         videoElement.className = 'video-player';
-        videoElement.preload = 'metadata'; // Charge uniquement les métadonnées (durée, dimensions)
-        videoElement.setAttribute('poster', ''); // Utilise un placeholder ou capture automatique
+        videoElement.preload = 'metadata';
 
-        // Ajoute le titre en dessous
         const videoTitle = document.createElement('p');
-        const videoName = video.split('/').pop().replace('.mp4', '');
-        videoTitle.textContent = videoName;
+        videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
 
         button.appendChild(videoElement);
         button.appendChild(videoTitle);
         videoSection.appendChild(button);
     });
-})
-.catch(error => console.error('Error fetching videos:', error));
+}
+
+loadVideos();
