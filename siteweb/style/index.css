@@ -59,10 +59,9 @@
 
 .vue-video 
 {
-    display: flex;
     font-size: 0.7rem;
     font-weight: 600;
-    margin-left: 22px;
+    margin-left: 5px;
     margin-top: 2px;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 4px;
@@ -70,5 +69,27 @@
 
 .vue-video i 
 {
+    margin-left: 5px;
+}
+
+.like-video 
+{
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 2px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 4px;
+}
+
+.like-video i 
+{
+    margin-left: 5px;
+}
+
+.video-stats 
+{
+    display: flex;
+    align-items: center;
     margin-left: 5px;
 }

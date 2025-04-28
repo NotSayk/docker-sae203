@@ -18,10 +18,12 @@ const localVideos = [
     "Horizontally_spinning_man.mp4"
 ];
 
-function displayVideos(videos) {
+function displayVideos(videos) 
+{
     videos.forEach(video => {
 
         const views = localStorage.getItem(`views_${video}`) || 0;
+        const likes = localStorage.getItem(`likes_${video}`) || 0;
 
         const button = document.createElement('button');
         const videoElement = document.createElement('video');
@@ -34,9 +36,9 @@ function displayVideos(videos) {
         videoElement.className = 'video-player';
         videoElement.preload = 'metadata';
         
-        button.onclick = function() {
+        button.onclick = function() 
+        {
             localStorage.setItem(`views_${video}`, parseInt(views) + 1);
-
             window.location.href = `video.html?video=${video}`;
         };
 
@@ -44,13 +46,25 @@ function displayVideos(videos) {
         videoTitle.textContent = video.replace('.mp4', '').replace(/_/g, ' ');
         videoTitle.className = 'titre-video';
 
+        // Créer un conteneur pour les statistiques
+        const statsContainer = document.createElement('div');
+        statsContainer.className = 'video-stats';
+
         const vueVideo = document.createElement('p');
         vueVideo.innerHTML = `Vues: ${views} <i class="fas fa-eye"></i>`;
         vueVideo.className = 'vue-video';
 
+        const likeVideo = document.createElement('p');
+        likeVideo.innerHTML = `Likes: ${likes} <i class="fas fa-thumbs-up"></i>`;
+        likeVideo.className = 'like-video';
+
+        // Ajouter les statistiques au conteneur
+        statsContainer.appendChild(vueVideo);
+        statsContainer.appendChild(likeVideo);
+
         button.appendChild(videoElement);
         button.appendChild(videoTitle);
-        button.appendChild(vueVideo);
+        button.appendChild(statsContainer);
         videoSection.appendChild(button);
     });
 }
