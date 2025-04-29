@@ -1,6 +1,5 @@
 const videoSection = document.getElementById('video-section');
 
-
 function displayVideos(videos) 
 {
     videos.forEach(video => {
