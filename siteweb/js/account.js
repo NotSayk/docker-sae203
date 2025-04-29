@@ -9,11 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     statDiv.textContent = `Likes : ${likes}`;
 
-    statDiv.addEventListener('click', function() {
-        likes++;
-        statDiv.textContent = `Likes : ${likes}`;
-        localStorage.setItem(`likes_${utilisateurActuel}`, likes);
-    });
+    );
 
 
     if (!utilisateurActuel) 
