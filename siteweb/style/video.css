@@ -65,12 +65,35 @@
     font-size: 15px;
     cursor: pointer;
     border-radius: 30px;
-}
-
-#likeButton
-{
     margin-bottom: 3vh;
 }
+
+#shareButton
+{
+    margin-left: 60vh;
+    border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 3vh;
+}
+
+#downloadButton
+{
+    border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 3vh;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+
 
 #commentaires
 {

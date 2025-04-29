@@ -7,6 +7,7 @@ function main()
 {
     ajouterVideo();
     ajouterBarInfo();
+    ajouterEvenementPartage();
 }
 
 function ajouterBarInfo()
@@ -81,10 +82,27 @@ function ajouterBarInfo()
         updateLikeButtonAppearance();
     });
 
+    // Ajout des boutons de partage et de téléchargement
+    const downloadButton = document.createElement("a");
+    const shareButton = document.createElement("button");
+
+    downloadButton.id = "downloadButton";
+    shareButton.id = "shareButton";
+
+    downloadButton.href = VIDEO_FOLDER + VIDEO_URL;
+    downloadButton.download = VIDEO_URL;
+    downloadButton.innerHTML = `<i class="fas fa-download"></i> Télécharger`;
+
+    shareButton.innerHTML = `<i class="fas fa-share"></i> Partager`;
+
+
+
     DIV1.append(DIV2);
     DIV2.append(titre);
     DIV2.append(statsContainer);
     statsContainer.append(vuesInfo);
+    statsContainer.appendChild(shareButton);
+    statsContainer.appendChild(downloadButton);
     statsContainer.append(likesContainer);
     likesContainer.append(likeButton);
 }
@@ -113,4 +131,15 @@ function ajouterVideo()
     }
 }
 
-main()
+function ajouterEvenementPartage()
+{
+    const shareButton = document.getElementById("shareButton");
+    shareButton.addEventListener("click", function() 
+    {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url)
+        alert("Le lien de la vidéo a été copié dans le presse-papiers !");
+    });
+}
+
+main();
