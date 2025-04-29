@@ -1,6 +1,5 @@
 
 const localVideos = [
-        "cristiano_clip.mp4",
         "neymar_compil.mp4",
         "rick_roll.mp4",
         "ww3.mp4",
