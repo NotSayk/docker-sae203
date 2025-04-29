@@ -22,7 +22,9 @@ function displayVideos(videos)
         button.onclick = function() 
         {
             localStorage.setItem(`views_${video}`, parseInt(views) + 1);
+            vueVideo.innerHTML = `${parseInt(views) + 1}<i class="fas fa-eye"></i>`;
             window.location.href = `video.html?video=${video}`;
+
         };
 
         const videoTitle = document.createElement('p');

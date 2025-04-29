@@ -69,11 +69,13 @@ function ajouterBarInfo()
             currentLikes = Math.max(currentLikes - 1, 0);
             localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
             localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'false');
+            localStorage.setItem(`likes_${currentUser}`, Math.max(parseInt(localStorage.getItem(`likes_${currentUser}`) || 0) - 1, 0));
             aLike = false;
         } else {
             currentLikes += 1;
             localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
             localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'true');
+            localStorage.setItem(`likes_${currentUser}`, (parseInt(localStorage.getItem(`likes_${currentUser}`) || 0) + 1));
             aLike = true;
         }
 

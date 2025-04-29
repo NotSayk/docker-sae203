@@ -4,6 +4,18 @@ const photoProfil = document.getElementById('logo-compte');
 const utilisateurActuel = sessionStorage.getItem('user');
 
 document.addEventListener('DOMContentLoaded', function() {
+    const statDiv = document.querySelector('#likes');
+    let likes = parseInt(localStorage.getItem(`likes_${utilisateurActuel}`)) || 0;
+
+    statDiv.textContent = `Likes : ${likes}`;
+
+    statDiv.addEventListener('click', function() {
+        likes++;
+        statDiv.textContent = `Likes : ${likes}`;
+        localStorage.setItem(`likes_${utilisateurActuel}`, likes);
+    });
+
+
     if (!utilisateurActuel) 
     {
         window.location.href = 'index.html'; 
