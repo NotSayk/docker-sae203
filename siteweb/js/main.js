@@ -41,3 +41,11 @@ function getVideoNom(nomVideo)
 {
     return nomVideo.replaceAll(".mp4", "").replaceAll("_", " ");   
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const profilePicture = document.getElementById("profilePicture");
+    const defaultPfp = "/sae203/siteweb/images/pfp-defaut.png";
+
+    if (profilePicture && (!profilePicture.src || profilePicture.src.includes("null"))) {
+        profilePicture.src = defaultPfp;
+    }
+});

@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     statDiv.textContent = `Likes : ${likes}`;
 
-    );
-
 
     if (!utilisateurActuel) 
     {
