@@ -1,0 +1,87 @@
+body {
+    background: #f8fafc;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    padding: 2rem;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #64748b;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #1e293b;
+    margin: 1.5rem 0 0.5rem;
+}
+
+h3 {
+    color: #334155;
+    margin: 1.2rem 0 0.5rem;
+}
+
+h4 {
+    color: #475569;
+    margin: 1rem 0 0.5rem;
+}
+
+code {
+    background: #e2e8f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+pre {
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.structure {
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1rem 0;
+}
+
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #64748b;
+}
