@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     boutonChangerPhoto.addEventListener('click', function() 
     {
         const nouvelleUrlPhoto = prompt('Entrez l\'URL de la nouvelle photo de profil :');
-        if (nouvelleUrlPhoto && nouvelleUrlPhoto.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+        if (nouvelleUrlPhoto) {
             photoProfil.src = nouvelleUrlPhoto;
             localStorage.setItem(`profilePhotoUrl_${utilisateurActuel}`, nouvelleUrlPhoto);
             location.reload();    
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             photoProfil.src = "images/pfp-defaut.png";
             localStorage.setItem(`profilePhotoUrl_${utilisateurActuel}`, "images/pfp-defaut.png");
             location.reload();
+            console.log(photoProfil.src + " : " + localStorage.getItem(`profilePhotoUrl_${utilisateurActuel}`));
         }
     });
 });
