@@ -1,9 +1,190 @@
 <!DOCTYPE html>
-<html>
-  <head>
-	  <title>Untitled-1</title>
-  </head>
-  <body>
-  	<h1>untitled-1</h1>
-  </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte-rendu SAE203 - VOD Docker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Docker SAE203 - Site Web de Vidéo à la Demande</h1>
+            <p>Ce projet implémente un site web de vidéo à la demande, hébergé dans un conteneur Docker. Il utilise Apache pour servir les fichiers du site, avec des pages d'inscription, de connexion et de profil utilisateur.</p>
+        </header>
+
+        <section>
+            <h2>Prérequis</h2>
+            <p>Avant de commencer, assurez-vous que vous avez installé les éléments suivants sur votre machine :</p>
+            <ul>
+                <li><strong>Docker</strong> : Assurez-vous que Docker est installé et fonctionne correctement. <a href="https://www.docker.com/products/docker-desktop">Télécharger Docker</a></li>
+                <li><strong>Git</strong> : Vous aurez besoin de Git pour cloner ce dépôt. <a href="https://git-scm.com/downloads">Télécharger Git</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Installation</h2>
+            <ol>
+                <li>Cloner le dépôt :
+                    <pre><code>git clone https://github.com/NotSayk/docker-sae203.git
+cd docker-sae203</code></pre>
+                </li>
+                <li>Construire l'image Docker :
+                    <pre><code>docker build -t mon_site_web .</code></pre>
+                </li>
+                <li>Lancer le conteneur Docker :
+                    <pre><code>docker run -d -p 8080:80 mon_site_web</code></pre>
+                </li>
+                <li>Accéder au site : <code>http://localhost:8080</code></li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités</h2>
+            
+            <h3>Pages disponibles</h3>
+            <ul>
+                <li><strong>Page d'accueil</strong> (index.html) : La page principale du site</li>
+                <li><strong>Page de connexion</strong> (login.html) : Permet aux utilisateurs de se connecter</li>
+                <li><strong>Page d'inscription</strong> (signup.html) : Permet de créer un compte</li>
+                <li><strong>Page de profil</strong> (profile.html) : Affiche les informations du profil</li>
+            </ul>
+            
+            <h3>Scripts JavaScript</h3>
+            <ul>
+                <li><strong>auth.js</strong> : Gère la logique de connexion et d'inscription</li>
+                <li><strong>script.js</strong> : Fonctions générales utilisées sur plusieurs pages</li>
+                <li><strong>session.js</strong> : Gère la session utilisateur</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Structure du projet</h2>
+            <div class="structure">
+docker-sae203
+│   dockerfile
+│   LICENSE
+│   README.md
+│   
+└───siteweb
+    │   account.html
+    │   index.html                                                                    
+    │   login.html
+    │   register.html
+    │   video.html
+    │   videos.json
+    │   
+    ├───images
+    │       logo.png
+    │       pfp-defaut.png
+    │       
+    ├───js
+    │       account.js
+    │       auth.js
+    │       commentaires.js
+    │       login.js
+    │       main.js
+    │       preview.js
+    │       recherche.js
+    │       register.js
+    │       video.js
+    │       videoDisplay.js
+    │
+    ├───style
+    │       account.css
+    │       index.css
+    │       login.css
+    │       style.css
+    │       video.css
+    │
+    └───videos
+            </div>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités détaillées</h2>
+            
+            <h3>Page d'accueil (index.html)</h3>
+            <ul>
+                <li>Affichage d'une grille de miniatures vidéo avec leurs titres</li>
+                <li>Fonctionnalité de recherche en temps réel</li>
+                <li>Prévisualisation des vidéos au survol</li>
+                <li>Compteur de vues et de likes</li>
+                <li>Indication de la durée des vidéos</li>
+            </ul>
+            
+            <h3>Page vidéo (video.html)</h3>
+            <ul>
+                <li>Lecture avec contrôles standard</li>
+                <li>Affichage des statistiques (vues, likes)</li>
+                <li>Système de likes pour utilisateurs connectés</li>
+                <li>Section de commentaires</li>
+                <li>Boutons de partage et téléchargement</li>
+                <li>Comptage automatique des vues</li>
+            </ul>
+            
+            <h3>Système d'authentification</h3>
+            <h4>Page d'inscription (register.html)</h4>
+            <ul>
+                <li>Création de compte avec nom d'utilisateur et mot de passe</li>
+                <li>Vérification de l'unicité du nom d'utilisateur</li>
+                <li>Stockage sécurisé dans le localStorage</li>
+            </ul>
+            
+            <h4>Page de connexion (login.html)</h4>
+            <ul>
+                <li>Authentification avec identifiants</li>
+                <li>Gestion de session via sessionStorage</li>
+                <li>Redirection après connexion</li>
+            </ul>
+            
+            <h3>Page de profil (account.html)</h3>
+            <ul>
+                <li>Affichage et modification de la photo de profil</li>
+                <li>Statistiques personnelles</li>
+                <li>Option de déconnexion</li>
+                <li>Interface personnalisée</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités techniques</h2>
+            
+            <h3>Stockage de données</h3>
+            <ul>
+                <li>localStorage pour les informations utilisateur</li>
+                <li>Stockage des statistiques vidéos</li>
+                <li>Gestion des sessions via sessionStorage</li>
+            </ul>
+            
+            <h3>Navigation et interaction</h3>
+            <ul>
+                <li>Barre de navigation cohérente</li>
+                <li>Système de recherche instantané</li>
+                <li>Chargement dynamique depuis videos.json</li>
+            </ul>
+            
+            <h3>Conteneurisation Docker</h3>
+            <ul>
+                <li>Image Debian avec Apache2</li>
+                <li>Configuration optimisée</li>
+                <li>Exposition du port 80</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Points techniques notables</h2>
+            <ol>
+                <li><strong>Architecture client-side</strong> : Application entièrement côté client pour réactivité et facilité de déploiement</li>
+                <li><strong>Gestion des médias</strong> : Lecture et affichage efficace des vidéos avec statistiques</li>
+                <li><strong>Expérience utilisateur</strong> : Interface intuitive et réactive</li>
+                <li><strong>Portabilité</strong> : Conteneurisation Docker pour compatibilité</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>Projet SAE203 - Matéo Samuel Armand</p>
+        </footer>
+    </div>
+</body>
 </html>
