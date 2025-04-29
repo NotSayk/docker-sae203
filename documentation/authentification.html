@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentification - TonTube</title>
+    <link rel="stylesheet" href="../style/doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>Système d'authentification</h1>
+        </div>
+    </header>
+
+    <main class="documentation">
+        <section>
+            <h2>Fonctionnement général</h2>
+            <p>
+                Le système d'authentification utilise <strong>sessionStorage</strong> pour gérer la session utilisateur
+                et <strong>localStorage</strong> pour persister certaines données comme la photo de profil.
+            </p>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Connexion</h3>
+                    <ul>
+                        <li>Vérification des identifiants</li>
+                        <li>Stockage du nom d'utilisateur dans sessionStorage</li>
+                        <li>Redirection vers la page d'accueil</li>
+                        <li>Mise à jour de la navbar avec le nom et la photo de profil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Déconnexion</h3>
+                    <ul>
+                        <li>Suppression de l'utilisateur dans sessionStorage</li>
+                        <li>Redirection vers la page d'accueil</li>
+                        <li>Réinitialisation de la navbar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Gestion des utilisateurs</h2>
+            
+            <div class="code-block">
+                <h3>auth.js - Extrait clé</h3>
+                <pre>
+// Vérification de l'utilisateur connecté
+const user = sessionStorage.getItem("user");
+if (user) {
+    // Mise à jour de la navbar
+    const compteLink = document.getElementById("compte-link");
+    if (compteLink) { compteLink.remove(); }
+
+    // Création du lien vers le profil
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "account.html"; 
+    a.innerHTML = `${user}`;
+    li.appendChild(a);
+    navbar.appendChild(li);
+}</pre>
+            </div>
+            
+            <h3>Photo de profil</h3>
+            <ul class="feature-list">
+                <li>Stockée dans localStorage avec la clé <code>profilePhotoUrl_[username]</code></li>
+                <li>Photo par défaut utilisée si aucune photo n'est définie</li>
+                <li>Modifiable depuis la page de compte</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Sécurité et restrictions</h2>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Fonctionnalités protégées</h3>
+                    <ul>
+                        <li>Liker une vidéo (nécessite d'être connecté)</li>
+                        <li>Ajouter un commentaire (nécessite d'être connecté)</li>
+                        <li>Changer sa photo de profil (nécessite d'être connecté)</li>
+                    </ul>
+                    <p>
+                        Ces restrictions sont implémentées en vérifiant <code>sessionStorage.getItem('user')</code>
+                        avant d'autoriser l'action.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

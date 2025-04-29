@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des vidéos - TonTube</title>
+    <link rel="stylesheet" href="../style/doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>Gestion des vidéos</h1>
+        </div>
+    </header>
+
+    <main class="documentation">
+        <section>
+            <h2>Affichage des vidéos</h2>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-list"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Page d'accueil</h3>
+                    <ul>
+                        <li>Chargement des vidéos depuis <code>localVideos</code></li>
+                        <li>Prévisualisation avec élément <code>&lt;video&gt;</code></li>
+                        <li>Affichage des métadonnées (titre, vues, likes, durée)</li>
+                        <li>Calcul de la durée via l'événement <code>loadedmetadata</code></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Page vidéo</h3>
+                    <ul>
+                        <li>Lecture avec lecteur HTML5 natif</li>
+                        <li>Paramètre d'URL <code>?video=nom_video.mp4</code></li>
+                        <li>Titre généré automatiquement depuis le nom du fichier</li>
+                        <li>Incémentation du compteur de vues au chargement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Statistiques et interactions</h2>
+            
+            <div class="code-block">
+                <h3>video.js - Gestion des likes</h3>
+                <pre>
+// Système de likes
+likeButton.addEventListener("click", function() {
+    if (!currentUser) {
+        alert("Vous devez être connecté pour liker cette vidéo");
+        return;
+    }
+
+    let currentLikes = parseInt(localStorage.getItem(`likes_${VIDEO_URL}`) || 0);
+
+    if (aLike) {
+        currentLikes -= 1;
+        localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'false');
+    } else {
+        currentLikes += 1;
+        localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'true');
+    }
+    
+    localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
+    document.getElementById("likesCount").textContent = currentLikes;
+});</pre>
+            </div>
+            
+            <h3>Stockage des données</h3>
+            <ul class="feature-list">
+                <li><strong>Vues</strong>: <code>localStorage</code> avec la clé <code>views_[nom_video]</code></li>
+                <li><strong>Likes</strong>: <code>localStorage</code> avec la clé <code>likes_[nom_video]</code></li>
+                <li><strong>Likes utilisateur</strong>: <code>localStorage</code> avec la clé <code>[user]_liked_[nom_video]</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités avancées</h2>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Recherche</h3>
+                    <ul>
+                        <li>Barre de recherche avec autocomplétion</li>
+                        <li>Filtrage en temps réel sur la page d'accueil</li>
+                        <li>Redirection vers la vidéo si correspondance exacte</li>
+                        <li>Utilisation de <code>&lt;datalist&gt;</code> pour les suggestions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Partage</h3>
+                    <ul>
+                        <li>Bouton de partage qui copie l'URL dans le presse-papiers</li>
+                        <li>Utilisation de l'API Clipboard</li>
+                        <li>URL avec paramètre pour un accès direct</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Téléchargement</h3>
+                    <ul>
+                        <li>Lien de téléchargement direct</li>
+                        <li>Attribut <code>download</code> pour forcer le téléchargement</li>
+                        <li>Accès au fichier original dans le dossier videos/</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -79,9 +79,67 @@ a {
 a:hover {
     text-decoration: underline;
 }
+/* Ajouts spécifiques pour les pages de documentation */
 
-footer {
-    margin-top: 3rem;
-    text-align: center;
-    color: #64748b;
+/* Amélioration des blocs de code */
+.code-block {
+    position: relative;
+    background-color: #282c34;
+    color: #abb2bf;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.code-block h3 {
+    color: #e06c75;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    tab-size: 4;
+}
+
+/* Animation pour les cartes de fonctionnalités */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les listes de fonctionnalités */
+.feature-list {
+    list-style-type: none;
+    margin: 1.5rem 0;
+}
+
+.feature-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.5rem;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
 }

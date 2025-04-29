@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure du projet - TonTube</title>
+    <link rel="stylesheet" href="../style/doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>Structure du projet</h1>
+        </div>
+    </header>
+
+    <main class="documentation">
+        <section>
+            <h2>Architecture globale</h2>
+            <p>Le projet est organisé selon une architecture MVC (Modèle-Vue-Contrôleur) simplifiée :</p>
+            
+            <div class="code-block">
+                <pre>
+docker-sae203/
+│   dockerfile
+│   README.md
+│   
+└───siteweb
+    │   account.html
+    │   index.html                                                                    
+    │   login.html
+    │   video.html
+    │   videos.json
+    │   
+    ├───images
+    ├───js
+    ├───style
+    └───videos</pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Conteneur Docker</h2>
+            <p>Le projet est conteneurisé avec Docker pour une installation et un déploiement simplifiés.</p>
+            
+            <h3>Commandes principales</h3>
+            <div class="command">
+                <code>docker build -t ton_tube .</code>
+                <p>Construit l'image Docker</p>
+            </div>
+            <div class="command">
+                <code>docker run -d -p 8080:80 ton_tube</code>
+                <p>Lance le conteneur</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Structure des fichiers</h2>
+            
+            <h3>Pages HTML</h3>
+            <ul class="feature-list">
+                <li><strong>index.html</strong> - Page d'accueil avec liste des vidéos</li>
+                <li><strong>video.html</strong> - Page de visionnage d'une vidéo</li>
+                <li><strong>account.html</strong> - Page de gestion du compte utilisateur</li>
+                <li><strong>login.html</strong> - Page de connexion</li>
+            </ul>
+            
+            <h3>Scripts JavaScript</h3>
+            <ul class="feature-list">
+                <li><strong>auth.js</strong> - Gestion de l'authentification</li>
+                <li><strong>video.js</strong> - Gestion des vidéos</li>
+                <li><strong>commentaires.js</strong> - Système de commentaires</li>
+                <li><strong>recherche.js</strong> - Fonctionnalité de recherche</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>
