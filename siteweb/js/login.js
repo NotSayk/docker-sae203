@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', function (e)
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
 
-    if (username.endsWith('.mp4') || username.includes('profilePhotoUrl') ||  username.includes('commentaires')) {
+    if (username.includes('.mp4') || username.includes('profilePhotoUrl') ||  username.includes('commentaires')) {
         alert("Le nom d'utilisateur ne peut pas contenir 'profilePhotoUrl' ni se terminer par .mp4.");
         return;
     }
