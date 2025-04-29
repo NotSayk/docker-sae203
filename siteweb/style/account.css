@@ -56,6 +56,9 @@ border-radius: 50%;
     padding: 0.5rem;
     margin: 0.1rem 0;
     transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .stat:hover 
