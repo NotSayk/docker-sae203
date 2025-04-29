@@ -29,18 +29,17 @@
 
         <section id="barreRecherche">
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Rechercher une vidéo...">
+                <input type="text" id="search-input" list="listeBarRech" placeholder="Rechercher une vidéo...">
+                <datalist id="listeBarRech"></datalist>
                 <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
             </form>
         </section>
 
-
         <section id="navbar">
             <nav>
                 <ul class="nav-list">
-                    <li><a href="login.html" id="compte-link"><i class="fas fa-user"></i> Se connecter</a></li>
+                    <li><a href="login.html" id="compte-link"></i> Se connecter</a></li>
                 </ul>
-
             </nav>
         </section>
     </header>
@@ -48,7 +47,7 @@
     <section id="photo">
         <img src="images/pfp-defaut.png" alt="Logo de TonTube" id="logo-compte">
         <button id="changer">Changer photo de profil</button>
-        <h2>Bienvenue sur votre compte, </h2>
+        <h2>Bienvenue sur votre compte</h2>
     </section>
 
     <section id="stats-perso">
