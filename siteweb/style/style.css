@@ -130,6 +130,12 @@ header
     color: #606060;
 }
 
+#profilePicture {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    margin-left: 2vh;
+}
 
 footer
 {
