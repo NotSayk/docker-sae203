@@ -47,9 +47,9 @@ function ajouterBarInfo()
     function updateLikeButtonAppearance() {
         const icon = likeButton.querySelector('i');
         if (aLike) {
-            icon.style.color = "blue"; // Pouce bleu si liké
+            icon.style.color = "blue"; 
         } else {
-            icon.style.color = ""; // Couleur de base sinon
+            icon.style.color = "";
         }
     }
 
@@ -65,7 +65,7 @@ function ajouterBarInfo()
         let currentLikes = parseInt(localStorage.getItem(`likes_${VIDEO_URL}`) || 0);
 
         if (aLike) {
-            currentLikes = Math.max(currentLikes - 1, 0); // éviter d'aller en négatif
+            currentLikes = Math.max(currentLikes - 1, 0);
             localStorage.setItem(`likes_${VIDEO_URL}`, currentLikes);
             localStorage.setItem(`${currentUser}_liked_${VIDEO_URL}`, 'false');
             aLike = false;
@@ -76,18 +76,14 @@ function ajouterBarInfo()
             aLike = true;
         }
 
-        // Mettre à jour l'affichage
         const likesCountElement = document.getElementById("likesCount");
         likesCountElement.textContent = currentLikes;
         updateLikeButtonAppearance();
     });
 
-    // Nouvelle structure des éléments
     DIV1.append(DIV2);
     DIV2.append(titre);
-    // Ajout du statsContainer à DIV2
     DIV2.append(statsContainer);
-    // Ajout des vues et des likes au statsContainer
     statsContainer.append(vuesInfo);
     statsContainer.append(likesContainer);
     likesContainer.append(likeButton);

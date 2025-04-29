@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () =>
     const user = sessionStorage.getItem("user");
     const compteLink = document.getElementById("compte-link");
     const navbar = document.querySelector(".nav-list");
-    const utilisateurActuel = sessionStorage.getItem('user');
 
     if (user) 
         {
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () =>
         const a = document.createElement("a");
         const pfp = document.createElement("img");
 
-        pfp.src = localStorage.getItem(`profilePhotoUrl_${utilisateurActuel}`);
+        pfp.src = localStorage.getItem(`profilePhotoUrl_${user}`);
         pfp.id = "profilePicture";
         a.href = "account.html"; 
 

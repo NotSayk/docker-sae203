@@ -20,7 +20,7 @@
 #DescriptionDiv
 {
     position: absolute;
-    bottom: -9vh; 
+    bottom: -12vh; 
     left: 5vh;
     text-align: left;
     z-index: 2;
@@ -70,4 +70,89 @@
 #likeButton
 {
     margin-bottom: 3vh;
+}
+
+#commentaires
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 140vh;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 12vh;
+    align-items: flex-start;
+    padding-left: 6vh;
+}
+
+#pfp
+{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    margin-right: 2vh;
+}
+
+#commentaire-input
+{
+    width: 350%;
+    height: 5vh;
+    padding: 1vh;
+    font-size: 100%;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+}
+
+#commentaires h2
+{
+    font-size: 100%;
+    margin: 0; 
+    text-align: left;
+    color: #333;
+}
+
+#commentaire-input:focus
+{
+    border-bottom: 2px solid #007BFF;
+}
+
+#commentaire-formulaire
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5vh;
+    margin-bottom: 5vh;
+}
+
+.pfp
+{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    margin-right: 2vh;
+}
+
+.comment
+{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3vh;
+    width: 100%;
+    gap: 1vh;
+}
+
+.comment .username
+{
+    font-weight: bold;
+    margin-bottom: 1vh;
+    font-size: 80%;
+}
+
+.comment .comment-text
+{
+    margin-left: 1.4vh;
 }
