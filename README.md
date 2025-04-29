@@ -54,27 +54,42 @@ Le projet comprend des scripts JavaScript pour gérer l'authentification et les 
 ## Structure du projet
 
 ```
-docker-sae203/
-├── dockerfile             
-├── LICENSE               
-├── README.md           
-├── start.sh              
-├── siteweb/              
-│   ├── index.html        
-│   ├── login.html        
-│   ├── profile.html   
-│   ├── signup.html      
-│   ├── data/             
-│   │   └── users.json
-│   ├── images/           
-│   ├── js/                
-│   │   ├── auth.js       
-│   │   ├── script.js       
-│   │   └── session.js    
-│   ├── style/            
-│   │   ├── login.css      
-│   │   ├── signup.css    
-│   │   └── style.css       
-│   └── videos/            
-│       └── thumbnails      
+─docker-sae203
+    │   dockerfile
+    │   LICENSE
+    │   README.md
+    │   
+    └───siteweb
+        │   account.html
+        │   index.html                                                                    
+        │   login.html
+        │   register.html
+        │   video.html
+        │   videos.json
+        │   
+        ├───images
+        │       logo.png
+        │       pfp-defaut.png
+        │       
+        ├───js
+        │       account.js
+        │       auth.js
+        │       commentaires.js
+        │       login.js
+        │       main.js
+        │       preview.js
+        │       recherche.js
+        │       register.js
+        │       video.js
+        │       videoDisplay.js
+        │
+        ├───style
+        │       account.css
+        │       index.css
+        │       login.css
+        │       style.css
+        │       video.css
+        │
+        └───videos
+                
 ```
