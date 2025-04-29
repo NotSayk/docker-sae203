@@ -3,8 +3,6 @@ const DIV1 = document.getElementById("VideoDiv");
 const VIDEO_URL = PARAMETRES.get("video");
 const VIDEO_FOLDER = "videos/"; 
 
-let lstVideo = [];
-
 function main()
 {
     ajouterVideo();
@@ -97,7 +95,9 @@ function ajouterBarInfo()
 
 function ajouterVideo()
 {
-    if (lstVideo.includes(VIDEO_URL))
+    console.log(localVideos.includes(VIDEO_URL));
+    
+    if (localVideos.includes(VIDEO_URL))
     {
         document.title = "TonTube - " + VIDEO_URL.substring(0, VIDEO_URL.length - 4);
 
@@ -109,7 +109,6 @@ function ajouterVideo()
 
         DIV1.append(video);
         video.append(source);
-    
     }
     else
     {
@@ -120,19 +119,4 @@ function ajouterVideo()
     }
 }
 
-function getContenuJSON(json)
-{
-    return fetch(json)
-        .then(response => response.json())
-        .then(jsonData => {
-            lstVideo = jsonData.videos || [];
-            main();
-        })
-        .catch(error => {
-            console.error('Erreur lors de la lecture du fichier JSON:', error);
-        });
-}
-
-
-
-getContenuJSON("videos.json");
+main()
