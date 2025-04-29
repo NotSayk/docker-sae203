@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () =>
         const a = document.createElement("a");
         const pfp = document.createElement("img");
 
-        pfp.src = localStorage.getItem(`profilePhotoUrl_${user}`) || "/docker-sae203/siteweb/images/pfp-defaut.png";
+        const defaultPfpPath = window.location.href.includes("docker-sae203") 
+            ? "/docker-sae203/siteweb/images/pfp-defaut.png" 
+            : "/images/pfp-defaut.png";
+        pfp.src = localStorage.getItem(`profilePhotoUrl_${user}`) || defaultPfpPath;
         pfp.id = "profilePicture";
         a.href = "account.html"; 
 
