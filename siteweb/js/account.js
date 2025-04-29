@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     boutonChangerPhoto.addEventListener('click', function() 
     {
         const nouvelleUrlPhoto = prompt('Entrez l\'URL de la nouvelle photo de profil :');
-
+        
         if (nouvelleUrlPhoto)
         {
             photoProfil.src = nouvelleUrlPhoto;
             localStorage.setItem(`profilePhotoUrl_${utilisateurActuel}`, nouvelleUrlPhoto);
             location.reload();    
         }
-        else
+        else if (nouvelleUrlPhoto != null)
         {
             photoProfil.src = "images/pfp-defaut.png";
             localStorage.setItem(`profilePhotoUrl_${utilisateurActuel}`, "images/pfp-defaut.png");
