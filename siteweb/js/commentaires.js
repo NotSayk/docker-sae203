@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const utilisateur = sessionStorage.getItem("user");
     const photoProfilElement = document.getElementById("pfp");
 
+    // Vérifier si l'URL contient "video.html"
+    if (new URLSearchParams(window.location.search).get("video") == null) 
+        {
+        document.getElementById("commentaires").style.display = "none";
+    }
     // Définir la photo de profil
     const definirPhotoProfil = () => {
         if (utilisateur) {

@@ -91,8 +91,6 @@ function ajouterBarInfo()
 
 function ajouterVideo()
 {
-    console.log(localVideos.includes(VIDEO_URL));
-    
     if (localVideos.includes(VIDEO_URL))
     {
         document.title = "TonTube - " + VIDEO_URL.substring(0, VIDEO_URL.length - 4);
